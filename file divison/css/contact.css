@@ -1,8 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -18,43 +14,7 @@ body {
     filter: blur(2px) brightness(0.5); 
 }
 
-.sidebar {
-    background-color: #ffc107;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 250px;
-}
 
-.sidebar img {
-    margin-bottom: 20px;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-}
-
-.sidebar nav ul {
-   
-    list-style-type: none;
-    text-align: center;
-}
-
-.sidebar nav ul li {
-    margin-bottom: 5px;
-}
-
-.sidebar nav ul li a {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.sidebar nav ul li a:hover {
-    text-decoration: underline;
-    color: rgb(234, 234, 229);
-}
 
 .main-content {
     padding: 40px;
@@ -67,7 +27,7 @@ body {
 }
 
 .heading h1 {
-    font-family: "Train One", system-ui;
+    /* font-family: "Train One", system-ui; */
     font-weight: 400;
     font-style: normal;
     font-size: 45px;
@@ -125,31 +85,6 @@ strong {
     text-align: center;
 }
 
-.social-sidebar {
-    position: fixed;
-    right: 35px;
-    top: 170px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    width: 40px;
-    height: 40%;
-    padding: 10px;
-    border-radius: 40px;
-    background-color: #fbc612;
-    
-}
-
-.social-sidebar a {
-    display:flex;
-    color: black; 
-    font-size: 24px;
-    /* margin-bottom: 20px; */
-    text-decoration: none;
-}
-.social-sidebar a::before{
-    color: #EDEDED;
-}
 
 /* Contact Form Overlay */
 .contact-overlay {
