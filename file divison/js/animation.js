@@ -1,32 +1,38 @@
+
+
 document.addEventListener("DOMContentLoaded", function() {
-    const textElement = document.getElementById("animated-text");
-    const nameElement = document.getElementById("animated-name");
+    const animatedText = document.getElementById("animated-text");
+    const animatedName = document.getElementById("animated-name");
+    const animatedRole = document.getElementById("animated-role");
 
-    const text = "HI THERE!";
-    const nameText = "THIS IS Minhaj";
+    const text = "HI THERE! I'm ";
+    // const text2 = "THIS IS";
+    // The text you want to appear first
+    const name = "Minhaj"; // The name text
+    const roleText = "PASSIONATE WEB DEVEOPER"; // The role text (e.g., web developer)
 
-    let textIndex = 0;
-    let nameIndex = 0;
+    // Function to animate the text typing effect
+    function animateText(element, text,delay = 0, animationDuration = 3) {
+        let index = 0;
+        element.textContent = ""; 
 
-    // Function to type "HI THERE!"
-    const typeText = () => {
-        if (textIndex < text.length) {
-            textElement.textContent += text[textIndex];
-            textIndex++;
-            setTimeout(typeText, 150); // Adjust speed of typing
-        } else {
-            setTimeout(typeName, 500); // Delay before typing the name
-        }
-    };
+        // Typing animation
+        setInterval(() => {
+            if (index < text.length) {
+                element.textContent += text.charAt(index);
+                index++;
+            }
+        }, 100); // 100ms delay between each character
+    }
 
-    // Function to type "THIS IS Minhaj"
-    const typeName = () => {
-        if (nameIndex < nameText.length) {
-            nameElement.textContent += nameText[nameIndex];
-            nameIndex++;
-            setTimeout(typeName, 150);
-        }
-    };
-
-    typeText(); // Start typing animation
+    // Start animation with delay
+    animateText(animatedText, text);
+    setTimeout(() => {
+        animateText(animatedName, name, 1000);
+        animateText(animatedRole, roleText, 3000, 4); // Delays role text after the name is done
+    }, 3000); // Delay the name animation after the text
 });
+
+
+
+   

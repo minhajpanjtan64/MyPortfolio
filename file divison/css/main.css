@@ -37,13 +37,20 @@
     color: black;
     text-decoration: none;
     font-weight:bold;
-    font-size: 20px;
+    font-size: 1.2rem;
     
 }
 
 .sidebar nav ul  a:hover {
-    text-decoration: underline;
+    text-decoration:underline;
     color: rgb(234, 234, 229);
+}
+.sidebar nav ul li a.active {
+    color: white; /* Active link text color */
+    text-decoration: underline;
+    /* background-color: #000; Background highlight for active link */
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .social-sidebar {
@@ -53,12 +60,13 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    width: 40px;
-    height: 40%;
+    width: 3.7rem;
+    height: 48%;
     padding: 25px;
     border-radius: 40px;
     background-color: #fbc612;
-    
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+    border: .001rem solid rgb(99, 97, 97);
 }
 .social-sidebar a i
 {
@@ -68,8 +76,11 @@
     justify-content: center;
 }
 .social-sidebar a i:hover{
-    color: aliceblue;
-}
+    color: rgb(234, 234, 229);}
+
+
+
+
 .social-sidebar a {
     /* display:flex; */
     color: black; 
