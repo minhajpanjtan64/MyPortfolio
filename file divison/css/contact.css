@@ -179,3 +179,8 @@ strong
 {
     background-color: #3b82f6;
 }
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}

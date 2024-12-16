@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="/file divison/css/main.css">
     <link rel="shortcut icon" href="/file divison/images/favicon.ico" type="image/x-icon">
-   
 </head>
 <body>
     <div class="container" id="content">
@@ -94,48 +93,38 @@
             form.style.display = form.style.display === 'flex' ? 'none' : 'flex';
             content.classList.toggle('blurred');
         }
+
         function validateForm() {
-    let valid = true;
+            let valid = true;
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const messageError = document.getElementById('messageError');
 
-    const nameError = document.getElementById('nameError');
-    const emailError = document.getElementById('emailError');
-    const messageError = document.getElementById('messageError');
+            nameError.textContent = '';
+            emailError.textContent = '';
+            messageError.textContent = '';
 
-    // Clear previous error messages
-    nameError.textContent = '';
-    emailError.textContent = '';
-    messageError.textContent = '';
+            if (name === '' || !/^[a-zA-Z\s]+$/.test(name)) {
+                nameError.textContent = 'Name must contain only letters and spaces.';
+                valid = false;
+            }
 
-    // Validate Name
-    if (name === '' || !/^[a-zA-Z\s]+$/.test(name)) {
-        nameError.textContent = 'Name must contain only letters and spaces.';
-        valid = false;
-    }
+            if (email === '' || !/^\S+@\S+\.\S+$/.test(email)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                valid = false;
+            }
 
-    // Validate Email
-    if (email === '' || !/^\S+@\S+\.\S+$/.test(email)) {
-        emailError.textContent = 'Please enter a valid email address.';
-        valid = false;
-    }
+            if (message === '') {
+                messageError.textContent = 'Message cannot be empty.';
+                valid = false;
+            }
 
-    // Validate Message
-    if (message === '') {
-        messageError.textContent = 'Message cannot be empty.';
-        valid = false;
-    }
-
-    if (valid) {
-        alert('Thank you! Your response has been successfully submitted.');
-        toggleForm(); // Close the contact form
-    }
-
-    return false; // Prevent page reload
-}
-
+            return valid;
+        }
     </script>
 </body>
 </html>
